@@ -25,7 +25,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 
 @ConfigurationProperties(prefix = PolarisDiscoveryConst.PREFIX)
 public class PolarisDiscoveryProperties {
-
+    private String protocol = "http";
     private String namespace;
 
     private String host;
@@ -116,5 +116,13 @@ public class PolarisDiscoveryProperties {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getProtocol() {
+        return protocol;
+    }
+
+    public void setProtocol(String protocol) {
+        this.protocol = protocol;
     }
 }

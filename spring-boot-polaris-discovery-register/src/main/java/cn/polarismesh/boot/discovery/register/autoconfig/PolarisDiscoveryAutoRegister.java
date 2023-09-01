@@ -74,6 +74,7 @@ public class PolarisDiscoveryAutoRegister implements ApplicationListener<WebServ
             registerRequest.setWeight(polarisDiscoveryProperties.getWeight());
         }
         registerRequest.setMetadata(polarisDiscoveryProperties.getMetadata());
+        registerRequest.setProtocol(polarisDiscoveryProperties.getProtocol());
         providerAPI.register(registerRequest);
         LOG.info("[Polaris] success to register instance {}:{}, service is {}, namespace is {}",
                 registerRequest.getHost(), registerRequest.getPort(), registerRequest.getService(),
